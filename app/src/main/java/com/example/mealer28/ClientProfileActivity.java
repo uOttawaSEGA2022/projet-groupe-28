@@ -26,6 +26,7 @@ public class ClientProfileActivity extends AppCompatActivity {
 
     private TextView welcomeTextClient;
     private Button logoutBtn;
+    private Button complaintBtn;
 
 
     @SuppressLint("MissingInflatedId")
@@ -44,6 +45,17 @@ public class ClientProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =  new Intent(ClientProfileActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+        complaintBtn = findViewById(R.id.complaintButton);
+        complaintBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(ClientProfileActivity.this, SubmitAComplaintActivity.class);
                 startActivity(intent);
                 finish();
             }
